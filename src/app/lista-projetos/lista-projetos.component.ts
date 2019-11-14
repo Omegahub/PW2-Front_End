@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { THROW_IF_NOT_FOUND } from '@angular/core/src/di/injector';
 import { ProjetoApiService } from '../service/projeto-api.service';
 import { Projeto } from '../model/projeto';
+import {FormGroup, FormBuilder} from '@angular/forms';
+
 
 @Component({
   selector: 'has-lista-projetos',
@@ -24,5 +26,4 @@ export class ListaProjetosComponent implements OnInit {
   {
     this.router.navigate(['detalhe-projeto',id]);
   }
-
 }
