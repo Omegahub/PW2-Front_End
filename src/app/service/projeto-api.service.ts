@@ -9,7 +9,7 @@ import {retry, catchError} from 'rxjs/operators'
   providedIn: 'root'
 })
 export class ProjetoApiService {
-  apiUrl: string = "http://exapi.somee.com/api/";
+  apiUrl: string = "/proxy/Projetos";
   constructor(private httpClient: HttpClient) { }
 
   handleError(error)
@@ -21,7 +21,7 @@ export class ProjetoApiService {
 
   getProjetos() : Observable<Projeto[]>
   {
-    return this.httpClient.get<Projeto[]>(this.apiUrl + "Projetos")
+    return this.httpClient.get<Projeto[]>(this.apiUrl)
                           .pipe(retry(1), catchError(this.handleError))
   }
 }
