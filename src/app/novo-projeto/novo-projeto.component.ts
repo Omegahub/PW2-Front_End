@@ -12,20 +12,21 @@ export class NovoProjetoComponent implements OnInit {
 
   formProjeto : FormGroup
 
-  constructor( public FormBuilder : FormBuilder, private service : ProjetoApiService ) { }
+  constructor( public formBuilder : FormBuilder, private service : ProjetoApiService ) { }
 
   ngOnInit() {
-    this.formProjeto = this.FormBuilder.group({
-      nome : this.FormBuilder.control (""),
-      sala :  this.FormBuilder.control (""),
-      turma :  this.FormBuilder.control (""),
-      orientadores :   this.FormBuilder.control ("")
+    this.formProjeto = this.formBuilder.group({
+      nome : this.formBuilder.control (''),
+      sala :  this.formBuilder.control (''),
+      turma :  this.formBuilder.control (''),
+      orientadores :   this.formBuilder.control ('')
     })
   }
 
   onSalvar()
   {
     let projeto :  Projeto = this.formProjeto.value;
+
     this.service.createProjeto(projeto)
                 .subscribe(data => console.log(data),
                             error => console.log(error));

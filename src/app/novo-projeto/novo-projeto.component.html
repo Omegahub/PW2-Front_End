@@ -3,22 +3,22 @@
   <form [formGroup]=formProjeto (ngSubmit)="onSalvar()">
     <div class="form-group">
       <label for="inNome">Nome</label>
-      <input type="text" class="form-control" FormControlName= "Nome" id="inNome" name="inNome">
+      <input type="text" class="form-control" formControlName= "nome" id="inNome" name="inNome">
     </div>
 
     <div class="form-group">
       <label for="inOrientadores">Orientadores</label>
-      <input type="text" class="form-control"  FormControlName= "orientadores" id="inOrientadores" name="inOrientadores">
+      <input type="text" class="form-control"  formControlName= "orientadores" id="inOrientadores" name="inOrientadores">
     </div>
 
     <div class="form-group">
         <label for="inSala">Sala</label>
-        <input type="text" class="form-control" FormControlName= "sala" id="inSala" name="inSala">
+        <input type="text" class="form-control" formControlName= "sala" id="inSala" name="inSala">
     </div>
 
     <div class="form-group">
         <label for="inTurma">Turma</label>
-        <input type="text" class="form-control"  FormControlName= "turma" id="inTurma" name="inTurma">
+        <input type="text" class="form-control"  formControlName= "turma" id="inTurma" name="inTurma">
     </div>
       
     <button type="submit" class="btn btn-success">Salvar</button>
